@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What is dask? &#8212; Pangeo Tutorial at FOSS4G 2022</title>
+    <title>The Project Pythia &#8212; Pangeo Tutorial at FOSS4G 2022</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Workshop notebooks" href="use-cases.html" />
-    <link rel="prev" title="hvplot in a nutshell" href="visualization.html" />
+    <link rel="next" title="The Environmental Data Science Book" href="dsenv-book.html" />
+    <link rel="prev" title="Resources" href="beyond.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -149,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
   Pangeo 101
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="xarray_introduction.html">
    What is xarray?
@@ -160,8 +160,8 @@ const thebe_selector_output = ".output, .cell_output"
    hvplot in a nutshell
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dask_introduction.html">
    What is dask?
   </a>
  </li>
@@ -195,14 +195,14 @@ const thebe_selector_output = ".output, .cell_output"
   Beyond the workshop
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="beyond.html">
    Resources
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pythia.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    The Project Pythia
   </a>
  </li>
@@ -262,35 +262,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/pangeo-data/foss4g-2022/main?urlpath=tree/tutorial/dask_introduction.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -330,7 +301,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/pangeo-data/foss4g-2022/issues/new?title=Issue%20on%20page%20%2Fdask_introduction.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/pangeo-data/foss4g-2022/issues/new?title=Issue%20on%20page%20%2Fpythia.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -358,7 +329,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/dask_introduction.ipynb"
+        <a href="_sources/pythia.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -369,7 +340,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -407,7 +378,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>What is dask?</h1>
+                <h1>The Project Pythia</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -419,8 +390,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="what-is-dask">
-<h1>What is dask?<a class="headerlink" href="#what-is-dask" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-project-pythia">
+<h1>The Project Pythia<a class="headerlink" href="#the-project-pythia" title="Permalink to this headline">#</a></h1>
+<p>An education and training hub for the geoscientific Python community.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -450,17 +422,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="visualization.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="beyond.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">hvplot in a nutshell</p>
+            <p class="prev-next-title">Resources</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="use-cases.html" title="next page">
+    <a class='right-next' id="next-link" href="dsenv-book.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Workshop notebooks</p>
+        <p class="prev-next-title">The Environmental Data Science Book</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
