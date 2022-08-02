@@ -15,3 +15,5 @@ bottleneck
 scipy
 geoviews
 cartopy
+hvplot
+zarr
