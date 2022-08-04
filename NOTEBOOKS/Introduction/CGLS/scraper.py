@@ -143,7 +143,9 @@ class Collection:
 
     def set_date_range(self):
         self.start_date = self.observations_table['date'].head(1).item()
+        # TODO test self.start_date = self.observations_table['date'].min().item() possible issues with LAI or FaPAR
         self.end_date = self.observations_table['date'].tail(1).item()
+        # TODO test self.end_date = self.observations_table['date'].max.item() possible issues with LAI or FaPAR
 
     def set_alg_version_list(self):
         return self.observations_table['version'].unique()
@@ -246,6 +248,7 @@ RT list          : {self.rt}''')
         # calc date span
         if self.start_date is None or self.end_date is None:
             _ = self.set_date_range()
+
         # check and change index to dataindex
         if isinstance(self.observations_table.index[0], (int, np.int64, np.int)) is True:
             self.observations_table.set_index(['date'], inplace=True, drop=True)
@@ -258,6 +261,8 @@ RT list          : {self.rt}''')
 
         downloaded_list = []
         dl_tasks = {}
+        print(f'Total files to be downloaded: {len(downloaded_list)}')
+
         with ThreadPoolExecutor(max_workers=4) as executor:
             for pid, values in enumerate(download_list):
                 url, file_name, int_path = values
