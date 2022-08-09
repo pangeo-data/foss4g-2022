@@ -70,6 +70,16 @@
         "ideas",
         "review"
       ]
+    },
+    {
+      "login": "InnovA5",
+      "name": "Jean Iaquinta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20923527?v=4",
+      "profile": "https://github.com/InnovA5",
+      "contributions": [
+        "platform",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
