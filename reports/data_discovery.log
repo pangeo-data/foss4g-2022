@@ -17,16 +17,80 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import s3fs
-import xarray as xr
+LTS = xr.open_mfdataset(fileset, combine='nested', concat_dim=['time'],  preprocess=preprocess,
+                        decode_coords="all")
+LTS
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [1][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01ms3fs[39;00m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mxarray[39;00m [38;5;28;01mas[39;00m [38;5;21;01mxr[39;00m
+Input [0;32mIn [14][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m LTS [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_mfdataset[49m[43m([49m[43mfileset[49m[43m,[49m[43m [49m[43mcombine[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mnested[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mconcat_dim[49m[38;5;241;43m=[39;49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mtime[39;49m[38;5;124;43m'[39;49m[43m][49m[43m,[49m[43m  [49m[43mpreprocess[49m[38;5;241;43m=[39;49m[43mpreprocess[49m[43m,[49m
+[1;32m      2[0m [43m                        [49m[43mdecode_coords[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mall[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m      3[0m LTS
 
-[0;31mModuleNotFoundError[0m: No module named 's3fs'
-ModuleNotFoundError: No module named 's3fs'
+File [0;32m/usr/share/miniconda/envs/foss4g/lib/python3.10/site-packages/xarray/backends/api.py:972[0m, in [0;36mopen_mfdataset[0;34m(paths, chunks, concat_dim, compat, preprocess, engine, data_vars, coords, combine, parallel, join, attrs_file, combine_attrs, **kwargs)[0m
+[1;32m    969[0m     open_ [38;5;241m=[39m open_dataset
+[1;32m    970[0m     getattr_ [38;5;241m=[39m [38;5;28mgetattr[39m
+[0;32m--> 972[0m datasets [38;5;241m=[39m [open_(p, [38;5;241m*[39m[38;5;241m*[39mopen_kwargs) [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]
+[1;32m    973[0m closers [38;5;241m=[39m [getattr_(ds, [38;5;124m"[39m[38;5;124m_close[39m[38;5;124m"[39m) [38;5;28;01mfor[39;00m ds [38;5;129;01min[39;00m datasets]
+[1;32m    974[0m [38;5;28;01mif[39;00m preprocess [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m/usr/share/miniconda/envs/foss4g/lib/python3.10/site-packages/xarray/backends/api.py:972[0m, in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m    969[0m     open_ [38;5;241m=[39m open_dataset
+[1;32m    970[0m     getattr_ [38;5;241m=[39m [38;5;28mgetattr[39m
+[0;32m--> 972[0m datasets [38;5;241m=[39m [[43mopen_[49m[43m([49m[43mp[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mopen_kwargs[49m[43m)[49m [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths]
+[1;32m    973[0m closers [38;5;241m=[39m [getattr_(ds, [38;5;124m"[39m[38;5;124m_close[39m[38;5;124m"[39m) [38;5;28;01mfor[39;00m ds [38;5;129;01min[39;00m datasets]
+[1;32m    974[0m [38;5;28;01mif[39;00m preprocess [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m/usr/share/miniconda/envs/foss4g/lib/python3.10/site-packages/xarray/backends/api.py:537[0m, in [0;36mopen_dataset[0;34m(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)[0m
+[1;32m    530[0m overwrite_encoded_chunks [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124moverwrite_encoded_chunks[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
+[1;32m    531[0m backend_ds [38;5;241m=[39m backend[38;5;241m.[39mopen_dataset(
+[1;32m    532[0m     filename_or_obj,
+[1;32m    533[0m     drop_variables[38;5;241m=[39mdrop_variables,
+[1;32m    534[0m     [38;5;241m*[39m[38;5;241m*[39mdecoders,
+[1;32m    535[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[1;32m    536[0m )
+[0;32m--> 537[0m ds [38;5;241m=[39m [43m_dataset_from_backend_dataset[49m[43m([49m
+[1;32m    538[0m [43m    [49m[43mbackend_ds[49m[43m,[49m
+[1;32m    539[0m [43m    [49m[43mfilename_or_obj[49m[43m,[49m
+[1;32m    540[0m [43m    [49m[43mengine[49m[43m,[49m
+[1;32m    541[0m [43m    [49m[43mchunks[49m[43m,[49m
+[1;32m    542[0m [43m    [49m[43mcache[49m[43m,[49m
+[1;32m    543[0m [43m    [49m[43moverwrite_encoded_chunks[49m[43m,[49m
+[1;32m    544[0m [43m    [49m[43minline_array[49m[43m,[49m
+[1;32m    545[0m [43m    [49m[43mdrop_variables[49m[38;5;241;43m=[39;49m[43mdrop_variables[49m[43m,[49m
+[1;32m    546[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mdecoders[49m[43m,[49m
+[1;32m    547[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m    548[0m [43m[49m[43m)[49m
+[1;32m    549[0m [38;5;28;01mreturn[39;00m ds
+
+File [0;32m/usr/share/miniconda/envs/foss4g/lib/python3.10/site-packages/xarray/backends/api.py:349[0m, in [0;36m_dataset_from_backend_dataset[0;34m(backend_ds, filename_or_obj, engine, chunks, cache, overwrite_encoded_chunks, inline_array, **extra_tokens)[0m
+[1;32m    347[0m     ds [38;5;241m=[39m backend_ds
+[1;32m    348[0m [38;5;28;01melse[39;00m:
+[0;32m--> 349[0m     ds [38;5;241m=[39m [43m_chunk_ds[49m[43m([49m
+[1;32m    350[0m [43m        [49m[43mbackend_ds[49m[43m,[49m
+[1;32m    351[0m [43m        [49m[43mfilename_or_obj[49m[43m,[49m
+[1;32m    352[0m [43m        [49m[43mengine[49m[43m,[49m
+[1;32m    353[0m [43m        [49m[43mchunks[49m[43m,[49m
+[1;32m    354[0m [43m        [49m[43moverwrite_encoded_chunks[49m[43m,[49m
+[1;32m    355[0m [43m        [49m[43minline_array[49m[43m,[49m
+[1;32m    356[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mextra_tokens[49m[43m,[49m
+[1;32m    357[0m [43m    [49m[43m)[49m
+[1;32m    359[0m ds[38;5;241m.[39mset_close(backend_ds[38;5;241m.[39m_close)
+[1;32m    361[0m [38;5;66;03m# Ensure source filename always stored in dataset object (GH issue #2550)[39;00m
+
+File [0;32m/usr/share/miniconda/envs/foss4g/lib/python3.10/site-packages/xarray/backends/api.py:309[0m, in [0;36m_chunk_ds[0;34m(backend_ds, filename_or_obj, engine, chunks, overwrite_encoded_chunks, inline_array, **extra_tokens)[0m
+[1;32m    300[0m [38;5;28;01mdef[39;00m [38;5;21m_chunk_ds[39m(
+[1;32m    301[0m     backend_ds,
+[1;32m    302[0m     filename_or_obj,
+[0;32m   (...)[0m
+[1;32m    307[0m     [38;5;241m*[39m[38;5;241m*[39mextra_tokens,
+[1;32m    308[0m ):
+[0;32m--> 309[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mdask[39;00m[38;5;21;01m.[39;00m[38;5;21;01mbase[39;00m [38;5;28;01mimport[39;00m tokenize
+[1;32m    311[0m     mtime [38;5;241m=[39m _get_mtime(filename_or_obj)
+[1;32m    312[0m     token [38;5;241m=[39m tokenize(filename_or_obj, mtime, engine, chunks, [38;5;241m*[39m[38;5;241m*[39mextra_tokens)
+
+[0;31mModuleNotFoundError[0m: No module named 'dask'
+ModuleNotFoundError: No module named 'dask'
 
