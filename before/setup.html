@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Setup &#8212; Pangeo Tutorial at FOSS4G 2022</title>
+    <title>Setup: how to run the tutorial &#8212; Pangeo Tutorial at FOSS4G 2022</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -137,7 +137,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Setup
+   Setup: how to run the tutorial
   </a>
  </li>
 </ul>
@@ -373,23 +373,80 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-tutorial-on-the-provided-pangeo-platform">
+   Running the tutorial on the provided Pangeo platform
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-on-your-own-computer">
+   Running on your own computer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-using-a-binderhub-deployment">
+   Running using a Binderhub deployment
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Setup</h1>
+                <h1>Setup: how to run the tutorial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-tutorial-on-the-provided-pangeo-platform">
+   Running the tutorial on the provided Pangeo platform
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-on-your-own-computer">
+   Running on your own computer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-using-a-binderhub-deployment">
+   Running using a Binderhub deployment
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -397,19 +454,87 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="setup-how-to-run-the-tutorial">
+<h1>Setup: how to run the tutorial<a class="headerlink" href="#setup-how-to-run-the-tutorial" title="Permalink to this headline">#</a></h1>
+<p>This tutorial goal is to provide a wide introduction to the Pangeo ecosystem.
+While participants will see all the core libraries and possibilities offered by Pangeo software ecosystem, it is also important they get some insights of what is a Pangeo platform and how to use it.
+This is why we put in place such a platform on top of EOSC federation thanks to CESNET provider.
+We recommend then running this tutorial using the EOSC/CESNET infrastructure, which is mainly a Dask-gateway enabled Jupyterhub proposing some pre-cooked software environment.
+For more details on this deployment, you may want to take a look at <a class="reference external" href="https://github.com/dask/helm-chart/tree/main/daskhub">Daskhub helm chart</a>.</p>
+<p>This pages will describe three ways of running the tutorial:</p>
+<ul class="simple">
+<li><p>Through the provided Pangeo platform deployed on EOSC resources (recommended)</p></li>
+<li><p>Locally on your personal computer</p></li>
+<li><p>Using various Binderhubs solutions</p></li>
+</ul>
+<section id="running-the-tutorial-on-the-provided-pangeo-platform">
+<h2>Running the tutorial on the provided Pangeo platform<a class="headerlink" href="#running-the-tutorial-on-the-provided-pangeo-platform" title="Permalink to this headline">#</a></h2>
+<p>First, before the FOSS4G workshop, all the participants will have to create an EGI account and enroll to the Pangeo virtual organisation to have access to the platform.
+There are only two simple steps to do:</p>
+<ol class="simple">
+<li><p>Create an account on the development instance of EGI Check-In, clicking on: <a class="reference external" href="https://aai-dev.egi.eu/registry/co_petitions/start/coef:2">https://aai-dev.egi.eu/registry/co_petitions/start/coef:2</a>. You can easily delegate authentication with academic or social account e.g. GitHub.</p></li>
+<li><p>Enroll the “<a class="reference external" href="http://vo.pangeo.eu">vo.pangeo.eu</a>” Virtual Organisation by clicking on: <a class="reference external" href="https://aai-dev.egi.eu/registry/co_petitions/start/coef:290">https://aai-dev.egi.eu/registry/co_petitions/start/coef:290</a>.</p></li>
+</ol>
+<p>It’s important to do these steps as early as possible in order for Virtual Organisation managers to approve your petition to join.</p>
+<p>Once your enrollment to Pangeo VO is validated, just log out from EGI Check-in to refresh your account.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Before the start of the course, you need to register to the Pangeo EGI-ACE EOSC infrastructure.</p>
 </div>
+<p>Then, you just need to click on <a class="reference external" href="https://pangeo-foss4g.vm.fedcloud.eu/jupyterhub/hub/user-redirect/git-pull?repo=https%3A//github.com/pangeo-data/foss4g-2022&amp;urlpath=lab/tree/foss4g-2022/tutorial/pangeo101/&amp;branch=main">this link</a> to open a Jupyterlab on the correct folder for the tutorial.</p>
+<p>Under the hood, this will clone the <a class="reference external" href="https://github.com/pangeo-data/foss4g-2022">https://github.com/pangeo-data/foss4g-2022</a> repository and put you in the correct folder for executing our tutorial.</p>
+<p>From there, you can open and execute any notebooks used during the workshop, enjoy!</p>
+<p>Alternatively, you can also open notebooks one by one from the PANGEO 101 section of this Jupyterbook by clicking on the rocket icon 🚀 on top of the notebook and choosing Jupyterhub option.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>After the FOSS4G workshop, you can continue to use the resources. We would appreciate you get in touch with us to give us some feedback.</p>
+<p>After the FOSS4G workshop, you can continue to use the resources, but note that we would probably modify the service and things might not work from time to time.
+We would appreciate you get in touch with us to give us some feedback and be informed of the platform evolution. You can do this through <a class="reference external" href="https://github.com/pangeo-data/foss4g-2022/discussions">Github Discussions</a>.</p>
 <p>You can also contribtue to “the Pangeo show and tell” online meetups.</p>
 </div>
+</section>
+<section id="running-on-your-own-computer">
+<h2>Running on your own computer<a class="headerlink" href="#running-on-your-own-computer" title="Permalink to this headline">#</a></h2>
+<p>Most part of this tutorial has been designed to run on limited computer resources, so it’s fine to run it on your laptop.
+It’s a bit more complicated as you’ll have to install the software environment yourself. You also wont’be able to test real Cloud distributed processing with Dask gateway.</p>
+<p>Steps to run this tutorial on your own computer are listed below and demonstrated <em>through Linux commands only</em>:</p>
+<ol class="simple">
+<li><p>git clone the foss4g-2022 repository.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/pangeo-data/foss4g-2022.git
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Install the required software environment with Conda. If you don’t have Conda, install it by following these instructions (see <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">here</a>). Then create the environment, this can take a few minutes.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -n pangeo-foss4g -f foss4g-2022/.binder/environment.yml
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Launch a Jupyterlab notebook server from this environment.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate pangeo-foss4g
+jupyter lab
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Open a web browser and connect to the Jupyterlab provided URL (you should see it in the jupyter lab command outputs), something like: <a class="reference external" href="http://localhost:8888/lab?token=42fac6733c6854578b981bca3abf5152">http://localhost:8888/lab?token=42fac6733c6854578b981bca3abf5152</a>.</p></li>
+<li><p>Navigate to foss4g-2022/tutorial/pangeo101/ using the file browser on the left side of the Jupyterlab screen.</p></li>
+</ol>
+</section>
+<section id="running-using-a-binderhub-deployment">
+<h2>Running using a Binderhub deployment<a class="headerlink" href="#running-using-a-binderhub-deployment" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://binderhub.readthedocs.io/en/latest/">Binderhub</a> is a cloud service that allows users to share reproducible interactive computing environments from code repositories. It is generally used to enable other users to easily run your own code through Jupyter notebooks.
+It is a really cool service offered for free by several organisations (MyBinder through Jupyter, GESIS, etc.).</p>
+<p>It’s probably the easiest way to execute notebooks in this repository, as you only have to do one click to arrive in a Jupyterlab with all the necessary libraries.
+However, the hardware resources you’ll be allowed to use will be quite small, so you won’t be able to grasp the full potential of Pangeo software stack, and some parts of the notebooks will be unavailable.</p>
+<p>All the notebooks on the PANGEO 101 section, for example <a class="reference internal" href="../pangeo101/xarray_introduction.html"><span class="doc std std-doc">“Handling multi-dimensional arrays with xarray”</span></a> have a rocket icon at the top, from which you can select Binder button to just run this notebook on the <a class="reference external" href="https://notebooks.gesis.org/binder/">GESIS Binder service</a>.</p>
+<p>Alternatively, you can also directly click on the below buttons:</p>
+<p>GESIS:</p>
+<p><a class="reference external" href="https://notebooks.gesis.org/binder/v2/gh/pangeo-data/foss4g-2022/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<p>MyBinder:</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/pangeo-data/foss4g-2022/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<p>You will then have to navigate to the foss4g-2022/tutorial/pangeo101/ folder using the file browser on the left side of the Jupyterlab screen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
