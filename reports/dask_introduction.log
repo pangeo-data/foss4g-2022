@@ -17,23 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from distributed import Client
-
-if cluster:
-    client = Client(cluster) # create a dask Gateway cluster
-else:
-    client = Client()   # create a local dask cluster on the machine.
-client
+cluster.shutdown()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [11][0m, in [0;36m<cell line: 3>[0;34m()[0m
-[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdistributed[39;00m [38;5;28;01mimport[39;00m Client
-[0;32m----> 3[0m [38;5;28;01mif[39;00m [43mcluster[49m:
-[1;32m      4[0m     client [38;5;241m=[39m Client(cluster) [38;5;66;03m# create a dask Gateway cluster[39;00m
-[1;32m      5[0m [38;5;28;01melse[39;00m:
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+Input [0;32mIn [42][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [43mcluster[49m[38;5;241;43m.[39;49m[43mshutdown[49m()
 
-[0;31mNameError[0m: name 'cluster' is not defined
-NameError: name 'cluster' is not defined
+[0;31mAttributeError[0m: 'NoneType' object has no attribute 'shutdown'
+AttributeError: 'NoneType' object has no attribute 'shutdown'
 
