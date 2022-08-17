@@ -372,8 +372,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-tutorial-on-the-provided-pangeo-platform">
-   Running the tutorial on the provided Pangeo platform
+  <a class="reference internal nav-link" href="#running-the-tutorial-on-the-european-open-science-cloud-eosc">
+   Running the tutorial on the European Open Science Cloud (EOSC)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -406,8 +406,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-tutorial-on-the-provided-pangeo-platform">
-   Running the tutorial on the provided Pangeo platform
+  <a class="reference internal nav-link" href="#running-the-tutorial-on-the-european-open-science-cloud-eosc">
+   Running the tutorial on the European Open Science Cloud (EOSC)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -435,29 +435,30 @@ title="Print to PDF"
 <p>This tutorial’s goal is to provide a wide introduction to the Pangeo ecosystem.
 While participants will see all the core libraries and possibilities offered by the Pangeo software ecosystem, it is also important that they get some insights about what a Pangeo platform is and how to use it.
 This is why we put in place such a platform on top of EOSC federation thanks to provider CESNET.
-We recommend then running this tutorial using the EOSC/CESNET infrastructure, which is mainly a Dask-gateway enabled Jupyterhub offering some pre-cooked software environment.
+We recommend running this tutorial using the EOSC/CESNET infrastructure, which is mainly a Dask-gateway enabled Jupyterhub offering some pre-cooked software environment.
 For more details on this deployment, you may want to take a look at <a class="reference external" href="https://github.com/dask/helm-chart/tree/main/daskhub">Daskhub helm chart</a>.</p>
 <p>This page will describe three ways of running the tutorial:</p>
 <ul class="simple">
-<li><p>Through the provided Pangeo platform deployed on EOSC resources (recommended)</p></li>
+<li><p>Through EOSC resources (recommended)</p></li>
 <li><p>Locally on your personal computer</p></li>
-<li><p>Using various Binderhubs solutions</p></li>
+<li><p>Using other available Binderhubs solutions</p></li>
 </ul>
-<section id="running-the-tutorial-on-the-provided-pangeo-platform">
-<h2>Running the tutorial on the provided Pangeo platform<a class="headerlink" href="#running-the-tutorial-on-the-provided-pangeo-platform" title="Permalink to this headline">#</a></h2>
-<p>First, before the FOSS4G workshop, all the participants will have to create an EGI account and enroll to the Pangeo virtual organisation to have access to the platform.
-There are only two simple steps to do:</p>
+<section id="running-the-tutorial-on-the-european-open-science-cloud-eosc">
+<h2>Running the tutorial on the European Open Science Cloud (EOSC)<a class="headerlink" href="#running-the-tutorial-on-the-european-open-science-cloud-eosc" title="Permalink to this headline">#</a></h2>
+<p>First, before the FOSS4G workshop, all the participants will have to create an EGI account and enroll to the the Virtual Organisations to have access to EOSC Pangeo JupyterHub and/or EOSC EGI BinderHub.
+There are several steps to follow:</p>
 <ol class="simple">
-<li><p>Create an account on the development instance of EGI Check-In, clicking on: <a class="reference external" href="https://aai-dev.egi.eu/registry/co_petitions/start/coef:2">https://aai-dev.egi.eu/registry/co_petitions/start/coef:2</a>. You can easily delegate authentication with academic or social account e.g. GitHub.</p></li>
-<li><p>Enroll in the “<a class="reference external" href="http://vo.pangeo.eu">vo.pangeo.eu</a>” Virtual Organisation by clicking on: <a class="reference external" href="https://aai-dev.egi.eu/registry/co_petitions/start/coef:290">https://aai-dev.egi.eu/registry/co_petitions/start/coef:290</a>.</p></li>
+<li><p>Sign up for an EGI account:  <a class="reference external" href="https://aai.egi.eu/signup">https://aai.egi.eu/signup</a>. Use your <a class="reference external" href="https://orcid.org/">ORCID</a> account to authenticate or social media account e.g. <a class="reference external" href="https://github.com/">GitHub</a>.</p></li>
+<li><p>Enroll to the <strong><a class="reference external" href="http://vo.notebooks.egi.eu">vo.notebooks.egi.eu</a></strong> VO by clicking on <a class="reference external" href="https://aai.egi.eu/registry/co_petitions/start/coef:111">https://aai.egi.eu/registry/co_petitions/start/coef:111</a>. This will take you to the website shown on the Figure <img alt="EGI account" src="../_images/EGI-VO.png" /> and then to <img alt="EGI join VO notebook" src="../_images/EGI-join-VO.png" />. For the latter e.g. when asking to join the EGI VO notebook,  in the “statement for purpose” simply write “<strong>To execute Jupyter notebooks at the Pangeo 101 workshop in the frame of the FOSS4G-2022 conference</strong>”. Review and agree on the policy and click on “Submit”. Once your enrollment has been validated you will have access to <a class="reference external" href="https://binder.notebooks.egi.eu/">https://binder.notebooks.egi.eu/</a> (it requires you to authenticate using EGI Check-in credentials), a service building on BinderHub but with more compute resources than <a class="reference external" href="https://mybinder.org/">https://mybinder.org/</a>.</p></li>
+<li><p>Similarly create another account on the <strong>development instance</strong> of EGI Check-In, clicking on: <a class="reference external" href="https://aai-dev.egi.eu/registry/co_petitions/start/coef:2">https://aai-dev.egi.eu/registry/co_petitions/start/coef:2</a>.</p></li>
+<li><p><strong>Enroll</strong> in the “<a class="reference external" href="http://vo.pangeo.eu">vo.pangeo.eu</a>” Virtual Organisation by clicking on: <a class="reference external" href="https://aai-dev.egi.eu/registry/co_petitions/start/coef:290">https://aai-dev.egi.eu/registry/co_petitions/start/coef:290</a> (no statement of purpose required).</p></li>
 </ol>
-<p>It is important to perform these steps as early as possible in order for managers of the Virtual Organisation to approve your petition to join.</p>
-<p>Once your enrollment to Pangeo VO has been validated, simply log out from EGI Check-in to refresh your account.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Before the start of the course, you need to register to the Pangeo EGI-ACE EOSC infrastructure.</p>
+<p>It is <strong>important</strong> to perform all these steps <strong>as early as possible</strong> in order for managers of the Virtual Organisations to approve your petitions to join (which may <strong>take several days</strong>).</p>
 </div>
-<p>Then, you just need to click on <a class="reference external" href="https://pangeo-foss4g.vm.fedcloud.eu/jupyterhub/hub/user-redirect/git-pull?repo=https%3A//github.com/pangeo-data/foss4g-2022&amp;urlpath=lab/tree/foss4g-2022/tutorial/pangeo101/&amp;branch=main">this link</a> to open a Jupyterlab on the correct folder for the tutorial.</p>
+<p>Once your enrollments have been validated, you may need to log out from EGI Check-in to refresh your account. If you have any trouble, request help by <a class="reference external" href="https://github.com/pangeo-data/foss4g-2022/issues/new">filling an issue</a> before the workshop. Someone will assist you with the setup.</p>
+<p>To access the Pangeo EOSC JupyterHub, you need to click on <a class="reference external" href="https://pangeo-foss4g.vm.fedcloud.eu/jupyterhub/hub/user-redirect/git-pull?repo=https%3A//github.com/pangeo-data/foss4g-2022&amp;urlpath=lab/tree/foss4g-2022/tutorial/pangeo101/&amp;branch=main">this link</a> to open a Jupyterlab on the correct folder for the tutorial.</p>
 <p>Under the hood, this will clone the <a class="reference external" href="https://github.com/pangeo-data/foss4g-2022">https://github.com/pangeo-data/foss4g-2022</a> repository and put you in the correct folder for executing our tutorial.</p>
 <p>From there, you can open and execute any notebooks used during the workshop, enjoy!</p>
 <p>Alternatively, you can also open notebooks one by one from the PANGEO 101 section of this Jupyterbook by clicking on the rocket icon 🚀 on top of the notebook and choosing Jupyterhub option.</p>
