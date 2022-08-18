@@ -17,28 +17,34 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-LTS = LTS.rename({'INDEX': 'time'}).assign_coords(time=time_list)
+catalogue="https://object-store.cloud.muni.cz/swift/v1/foss4g-catalogue/c_gls_NDVI-LTS_1999-2019.json"
+LTS = xr.open_mfdataset(
+    "reference://", engine="zarr",
+    backend_kwargs={
+        "storage_options": {
+            "fo":catalogue
+                    },
+        "consolidated": False
+    }
+)
 LTS
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-Input [0;32mIn [16][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m LTS [38;5;241m=[39m [43mLTS[49m[38;5;241;43m.[39;49m[43mrename[49m[43m([49m[43m{[49m[38;5;124;43m'[39;49m[38;5;124;43mINDEX[39;49m[38;5;124;43m'[39;49m[43m:[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mtime[39;49m[38;5;124;43m'[39;49m[43m}[49m[43m)[49m[38;5;241m.[39massign_coords(time[38;5;241m=[39mtime_list)
-[1;32m      2[0m LTS
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [2][0m, in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m catalogue[38;5;241m=[39m[38;5;124m"[39m[38;5;124mhttps://object-store.cloud.muni.cz/swift/v1/foss4g-catalogue/c_gls_NDVI-LTS_1999-2019.json[39m[38;5;124m"[39m
+[0;32m----> 2[0m LTS [38;5;241m=[39m [43mxr[49m[38;5;241m.[39mopen_mfdataset(
+[1;32m      3[0m     [38;5;124m"[39m[38;5;124mreference://[39m[38;5;124m"[39m, engine[38;5;241m=[39m[38;5;124m"[39m[38;5;124mzarr[39m[38;5;124m"[39m,
+[1;32m      4[0m     backend_kwargs[38;5;241m=[39m{
+[1;32m      5[0m         [38;5;124m"[39m[38;5;124mstorage_options[39m[38;5;124m"[39m: {
+[1;32m      6[0m             [38;5;124m"[39m[38;5;124mfo[39m[38;5;124m"[39m:catalogue
+[1;32m      7[0m                     },
+[1;32m      8[0m         [38;5;124m"[39m[38;5;124mconsolidated[39m[38;5;124m"[39m: [38;5;28;01mFalse[39;00m
+[1;32m      9[0m     }
+[1;32m     10[0m )
+[1;32m     11[0m LTS
 
-File [0;32m/usr/share/miniconda/envs/foss4g/lib/python3.10/site-packages/xarray/core/dataset.py:3587[0m, in [0;36mDataset.rename[0;34m(self, name_dict, **names)[0m
-[1;32m   3585[0m [38;5;28;01mfor[39;00m k [38;5;129;01min[39;00m name_dict[38;5;241m.[39mkeys():
-[1;32m   3586[0m     [38;5;28;01mif[39;00m k [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mself[39m [38;5;129;01mand[39;00m k [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mdims:
-[0;32m-> 3587[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m   3588[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mcannot rename [39m[38;5;132;01m{[39;00mk[38;5;132;01m!r}[39;00m[38;5;124m because it is not a [39m[38;5;124m"[39m
-[1;32m   3589[0m             [38;5;124m"[39m[38;5;124mvariable or dimension in this dataset[39m[38;5;124m"[39m
-[1;32m   3590[0m         )
-[1;32m   3592[0m variables, coord_names, dims, indexes [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_rename_all(
-[1;32m   3593[0m     name_dict[38;5;241m=[39mname_dict, dims_dict[38;5;241m=[39mname_dict
-[1;32m   3594[0m )
-[1;32m   3595[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_replace(variables, coord_names, dims[38;5;241m=[39mdims, indexes[38;5;241m=[39mindexes)
-
-[0;31mValueError[0m: cannot rename 'INDEX' because it is not a variable or dimension in this dataset
-ValueError: cannot rename 'INDEX' because it is not a variable or dimension in this dataset
+[0;31mNameError[0m: name 'xr' is not defined
+NameError: name 'xr' is not defined
 
