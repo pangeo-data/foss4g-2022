@@ -10,6 +10,9 @@ dependencies:
   - numpy
   - ghp-import
   - xarray
-  - pip
   - pip:
     - wget
+    - sphinx-exercise
+    - kerchunk==0.0.7
+    - jupytext
+    - nbgitpuller
