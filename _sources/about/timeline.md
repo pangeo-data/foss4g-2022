@@ -6,9 +6,10 @@ The FOSS4G Pangeo 101 workshop is on Tuesday 23rd August 2022 from 14:00 - 18:00
 | ---- | -------- | 
 | 14:00  | 👋 Welcome | 
 |  | Introductions, logistics and workshop goal setting |
+|  | [The Pangeo ecosystem](https://docs.google.com/presentation/d/1XB9jmKlPnyAtUWRG_xzGC9h3qn_88gVSegOI3uDcaKo/edit?usp=sharing) |
 |  | Handling multi-dimensional arrays with xarray |
 |  | Interactive plotting with HoloViews |
-| 15:40  | ☕️ Break (20 minutes)|
+| 16:00  | ☕️ Break (20 minutes)|
 |  | Data access & Data chunking |
 |  | Parallel computing with Dask |
 | 17:45 | Beyond the workshop, feedback & concluding remarks |
