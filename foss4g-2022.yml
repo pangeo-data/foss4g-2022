@@ -6,7 +6,7 @@ dependencies:
   - python=3.10
   - jupyter-book
   - jupyterlab
-  - matplotlib
+  - matplotlib-base
   - numpy
   - ghp-import
   - xarray
@@ -26,10 +26,8 @@ dependencies:
   - s3fs
   - ipycytoscape
   - datashader
-  - pip
-  - pip:
-    - wget
-    - sphinx-exercise
-    - kerchunk==0.0.7
-    - jupytext
-    - nbgitpuller
+  - wget
+  - sphinx-exercise
+  - jupytext
+  - nbgitpuller
+  - kerchunk=0.0.7
